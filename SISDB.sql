@@ -1,3 +1,5 @@
+--
+
 TASK 1
 --CREATE DATABASE SISDB;
 --USE SISDB;
@@ -27,6 +29,7 @@ TASK 1
     email VARCHAR(100) UNIQUE NOT NULL
 );
 GO*/
+
 
 /*CREATE TABLE Students (
     student_id INT PRIMARY KEY IDENTITY(1,1),
@@ -194,3 +197,15 @@ SELECT * FROM Payments;
     --CHECK FOREIGN KEYS
 --EXEC sp_fkeys 'Enrollments'; -- Shows foreign keys related to Enrollments table
 --EXEC sp_fkeys 'Payments';
+/*Students ↔ Enrollments (One-to-Many):
+A student can enroll in multiple courses, but each enrollment record belongs to only one student.
+
+Courses ↔ Enrollments (One-to-Many):
+A course can have multiple students enrolled, but each enrollment record belongs to only one course.
+
+Teacher ↔ Courses (One-to-Many):
+A teacher can teach multiple courses, but each course is assigned to only one teacher.
+
+Students ↔ Payments (One-to-Many):
+A student can make multiple payments, but each payment record belongs to only one student.
+*/
