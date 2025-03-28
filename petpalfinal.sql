@@ -2,7 +2,7 @@
 
 USE PetPals;
 
-
+/*
 -- 2. Create Tables
 CREATE TABLE Pets (
     PetID INT PRIMARY KEY IDENTITY(1,1),
@@ -96,5 +96,6 @@ SELECT * FROM Pets WHERE AvailableForAdoption = 1;
 SELECT P.Name AS PetName, U.Name AS AdopterName
 FROM Adoption A
 
+*/
 
 ALTER TABLE Pets ADD OwnerID INT;
