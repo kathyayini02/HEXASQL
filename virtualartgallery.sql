@@ -114,7 +114,7 @@ VALUES
 --SELECT * FROM [User];
 SELECT * FROM Gallery;
 --user and fav artworks
-SELECT u.Username, a.Title 
+/*SELECT u.Username, a.Title 
 FROM User_Favorite_Artwork ufa
 JOIN [User] u ON ufa.UserID = u.UserID
 JOIN Artwork a ON ufa.ArtworkID = a.ArtworkID;
@@ -123,4 +123,4 @@ SELECT g.Name AS Gallery, a.Title AS Artwork
 FROM Artwork_Gallery ag
 JOIN Gallery g ON ag.GalleryID = g.GalleryID
 JOIN Artwork a ON ag.ArtworkID = a.ArtworkID;
-
+*/
