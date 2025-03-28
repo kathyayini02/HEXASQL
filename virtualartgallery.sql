@@ -35,12 +35,12 @@ USE VirtualArtGallery;
 /*CREATE TABLE [User] (
     UserID INT IDENTITY(1,1) PRIMARY KEY,
     Username NVARCHAR(100) UNIQUE NOT NULL,
-    PasswordHash NVARCHAR(255) NOT NULL,
+    Password NVARCHAR(255) NOT NULL,
     Email NVARCHAR(255) UNIQUE NOT NULL,
     FirstName NVARCHAR(100),
     LastName NVARCHAR(100),
     DateOfBirth DATE,
-    ProfilePicture NVARCHAR(500)
+  
 );
 */
 /*CREATE TABLE Gallery (
@@ -53,6 +53,7 @@ USE VirtualArtGallery;
     FOREIGN KEY (CuratorID) REFERENCES Artist(ArtistID) ON DELETE SET NULL
 );
 */
+many to many
 /*CREATE TABLE User_Favorite_Artwork (
     UserID INT,
     ArtworkID INT,
@@ -61,6 +62,7 @@ USE VirtualArtGallery;
     FOREIGN KEY (ArtworkID) REFERENCES Artwork(ArtworkID) ON DELETE CASCADE
 );
 */
+    many to many
 /*CREATE TABLE Artwork_Gallery (
     ArtworkID INT,
     GalleryID INT,
@@ -75,7 +77,7 @@ WHERE TABLE_TYPE = 'BASE TABLE';
 
 --EXEC sp_columns Artist;
 
-SELECT 
+/*SELECT 
     OBJECT_NAME(fk.parent_object_id) AS TableName,
     COL_NAME(fc.parent_object_id, fc.parent_column_id) AS ColumnName,
     OBJECT_NAME(fk.referenced_object_id) AS ReferencedTable,
@@ -92,13 +94,13 @@ VALUES
 INSERT INTO Artwork (Title, Description, CreationDate, Medium, ImageURL, ArtistID)
 VALUES 
 ('Mona Lisa', 'Famous portrait of Lisa Gherardini', '1503-01-01', 'Oil on wood', 'https://monalisa.com', 1),
-('Starry Night', 'Depiction of Saint-Rémy', '1889-06-01', 'Oil on canvas', 'https://starrynight.com', 2);
+('Starry Night', 'Depiction of Saint-RÃ©my', '1889-06-01', 'Oil on canvas', 'https://starrynight.com', 2);
 
 
 INSERT INTO [User] (Username, PasswordHash, Email, FirstName, LastName, DateOfBirth, ProfilePicture)
 VALUES 
-('artlover123', 'passwordhash1', 'artlover@example.com', 'John', 'Doe', '1995-08-21', 'https://profilepic.com/user1'),
-('galleryfan', 'passwordhash2', 'galleryfan@example.com', 'Jane', 'Smith', '1992-03-15', 'https://profilepic.com/user2');
+('artlover123', 'password1', 'artlover@example.com', 'John', 'Doe', '1995-08-21', 'https://profilepic.com/user1'),
+('galleryfan', 'password2', 'galleryfan@example.com', 'Jane', 'Smith', '1992-03-15', 'https://profilepic.com/user2');
 
 */
 
@@ -121,12 +123,12 @@ VALUES
 --SELECT * FROM Artwork;
 --SELECT * FROM [User];
 SELECT * FROM Gallery;
-
+--user and fav artworks
 SELECT u.Username, a.Title 
 FROM User_Favorite_Artwork ufa
 JOIN [User] u ON ufa.UserID = u.UserID
 JOIN Artwork a ON ufa.ArtworkID = a.ArtworkID;
-
+--galleries and artwork
 SELECT g.Name AS Gallery, a.Title AS Artwork 
 FROM Artwork_Gallery ag
 JOIN Gallery g ON ag.GalleryID = g.GalleryID
