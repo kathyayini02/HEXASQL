@@ -28,7 +28,7 @@ TASK 1
     last_name VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL
 );
-GO*/
+*/
 
 
 /*CREATE TABLE Students (
@@ -39,7 +39,7 @@ GO*/
     email VARCHAR(100) UNIQUE NOT NULL,
     phone_number VARCHAR(15) UNIQUE NOT NULL
 );
-GO*/
+*/
 /*CREATE TABLE Courses (
     course_id INT PRIMARY KEY IDENTITY(1,1),
     course_name VARCHAR(100) NOT NULL,
@@ -47,7 +47,7 @@ GO*/
     teacher_id INT,
     FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id) ON DELETE SET NULL
 );
-GO*/
+*/
 --MANY TO MANY
 /*CREATE TABLE Enrollments (
     enrollment_id INT PRIMARY KEY IDENTITY(1,1),
@@ -57,7 +57,7 @@ GO*/
     FOREIGN KEY (student_id) REFERENCES Students(student_id) ON DELETE CASCADE, --ENROLL DELETED
     FOREIGN KEY (course_id) REFERENCES Courses(course_id) ON DELETE CASCADE
 );
-GO*/
+*/
 
 /*CREATE TABLE Payments (
     payment_id INT PRIMARY KEY IDENTITY(1,1),
