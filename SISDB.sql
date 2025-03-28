@@ -67,34 +67,75 @@ TASK 1
     FOREIGN KEY (student_id) REFERENCES Students(student_id) ON DELETE CASCADE
 );
     TASK 2 
+-- Inserting sample data into Students table with Indian names
 INSERT INTO Students (first_name, last_name, date_of_birth, email, phone_number) 
 VALUES 
-('John', 'Doe', '2000-05-15', 'john.doe@example.com', '9876543210'),
-('Alice', 'Smith', '2001-03-22', 'alice.smith@example.com', '9876543211'),
+('Rahul', 'Sharma', '2000-05-15', 'rahul.sharma@example.com', '9876543210'),
+('Priya', 'Singh', '2001-03-22', 'priya.singh@example.com', '9876543211'),
+('Anil', 'Kumar', '1999-08-30', 'anil.kumar@example.com', '9876543212'),
+('Meena', 'Patel', '2002-03-17', 'meena.patel@example.com', '9876543213'),
+('Suresh', 'Gupta', '2000-12-01', 'suresh.gupta@example.com', '9876543214'),
+('Deepa', 'Reddy', '2001-11-09', 'deepa.reddy@example.com', '9876543215'),
+('Vikram', 'Jain', '2003-05-20', 'vikram.jain@example.com', '9876543216'),
+('Ritu', 'Kapoor', '2002-07-22', 'ritu.kapoor@example.com', '9876543217'),
+('Ajay', 'Verma', '1998-09-15', 'ajay.verma@example.com', '9876543218'),
+('Neha', 'Desai', '2000-10-12', 'neha.desai@example.com', '9876543219');
 
-*/
-/*INSERT INTO Teacher (first_name, last_name, email) 
+-- Inserting sample data into Teacher table with Indian names
+INSERT INTO Teacher (first_name, last_name, email) 
 VALUES 
-('Dr. Adam', 'Scott', 'adam.scott@example.com'),
-('Prof. Laura', 'Miller', 'laura.miller@example.com'),
+('Arvind', 'Gupta', 'arvind.gupta@example.com'),
+('Rekha', 'Sharma', 'rekha.sharma@example.com'),
+('Sanjay', 'Kumar', 'sanjay.kumar@example.com'),
+('Anjali', 'Rao', 'anjali.rao@example.com'),
+('Vijay', 'Patel', 'vijay.patel@example.com'),
+('Seema', 'Joshi', 'seema.joshi@example.com'),
+('Rohit', 'Mehta', 'rohit.mehta@example.com'),
+('Kavita', 'Iyer', 'kavita.iyer@example.com'),
+('Prakash', 'Reddy', 'prakash.reddy@example.com'),
+('Nisha', 'Sharma', 'nisha.sharma@example.com');
 
-*/
-/*INSERT INTO Courses (course_name, credits, teacher_id) 
+-- Inserting sample data into Courses table
+INSERT INTO Courses (course_name, credits, teacher_id) 
 VALUES 
 ('Mathematics', 3, 1),
 ('Physics', 4, 2),
 ('Psychology', 3, 3),
+('Chemistry', 4, 4),
+('Biology', 3, 5),
+('Economics', 3, 6),
+('History', 2, 7),
+('Philosophy', 3, 8),
+('Computer Science', 4, 9),
+('English Literature', 3, 10);
 
-
-INSERT INTO Enrollments (student_id, course_id) 
+-- Inserting sample data into Enrollments table
+INSERT INTO Enrollments (student_id, course_id, enrollment_date) 
 VALUES 
-(1, 1), (2, 2), (3, 3), (4, 4), (5, 5), 
-(6, 6), (7, 7), (8, 8), (9, 9), (10, 10);
+(1, 1, '2024-01-10'),
+(2, 2, '2024-01-11'),
+(3, 3, '2024-01-12'),
+(4, 4, '2024-01-13'),
+(5, 5, '2024-01-14'),
+(6, 6, '2024-01-15'),
+(7, 7, '2024-01-16'),
+(8, 8, '2024-01-17'),
+(9, 9, '2024-01-18'),
+(10, 10, '2024-01-19');
 
+-- Inserting sample data into Payments table
 INSERT INTO Payments (student_id, amount, payment_date) 
 VALUES 
 (1, 5000.00, '2025-01-10'),
 (2, 4500.00, '2025-01-12'),
+(3, 5200.00, '2025-01-14'),
+(4, 4800.00, '2025-01-16'),
+(5, 5500.00, '2025-01-18'),
+(6, 5300.00, '2025-01-20'),
+(7, 4900.00, '2025-01-22'),
+(8, 5000.00, '2025-01-24'),
+(9, 4700.00, '2025-01-26'),
+(10, 5100.00, '2025-01-28');
 
 UPDATE Teacher SET email = 'new.email@example.com' WHERE teacher_id = 1;
 DELETE FROM Enrollments WHERE student_id = 1 AND course_id = 1;
